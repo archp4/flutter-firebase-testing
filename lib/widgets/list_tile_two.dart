@@ -26,6 +26,7 @@ class _ListTileTwoState extends State<ListTileTwo> {
             builder: (_) => ViewDetailPage(
               dataModel: widget.dataModel,
               isViewOnly: true,
+              isDeleteable: false,
             ),
           ),
         ),

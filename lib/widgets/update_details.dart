@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_firebase_auth/models/data.dart';
 import 'package:test_firebase_auth/services/firestore_service.dart';
+import 'package:test_firebase_auth/views/home.dart';
 
 class UpdateDetails extends StatefulWidget {
   final DataModel2 dataModel;
@@ -65,7 +66,7 @@ class _UpdateDetailsState extends State<UpdateDetails> {
                 suffixIcon: updateMessage
                     ? IconButton(
                         onPressed: () async {
-                          if (temp != widget.dataModel.name) {
+                          if (temp != widget.dataModel.name && temp != "") {
                             var result = await FireBaseService()
                                 .updateData(temp, widget.dataModel.id);
                             showDialog(
@@ -75,9 +76,13 @@ class _UpdateDetailsState extends State<UpdateDetails> {
                                 content: Text(result.toString()),
                                 actions: [
                                   TextButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
+                                    onPressed: () =>
+                                        Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) => const HomeView()),
+                                      (route) => false,
+                                    ),
                                     child: const Text("OK"),
                                   ),
                                 ],

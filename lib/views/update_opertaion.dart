@@ -37,6 +37,10 @@ class _UpdateViewState extends State<UpdateView> {
   }
 
   Widget buildListTile3(DataModel2 dataModel) {
-    return ListTileThree(dataModel: dataModel);
+    return ListTileThree(
+      dataModel: dataModel,
+      isDeleteable: false,
+      isViewOnly: false,
+    );
   }
 }

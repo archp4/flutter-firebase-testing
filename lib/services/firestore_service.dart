@@ -56,4 +56,12 @@ class FireBaseService {
       return "Failed to delete user's property: $error";
     });
   }
+
+  Future deleteData(String id) {
+    return data.doc(id).delete().then((value) {
+      return "Data Delete Successfully Plz Revisted";
+    }).catchError((error) {
+      return "Failed to delete user's property: $error";
+    });
+  }
 }

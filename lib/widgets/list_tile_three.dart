@@ -4,7 +4,14 @@ import 'package:test_firebase_auth/views/view_details.dart';
 
 class ListTileThree extends StatelessWidget {
   final DataModel2 dataModel;
-  const ListTileThree({Key? key, required this.dataModel}) : super(key: key);
+  final bool isDeleteable;
+  final bool isViewOnly;
+  const ListTileThree({
+    Key? key,
+    required this.dataModel,
+    required this.isDeleteable,
+    required this.isViewOnly,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +27,8 @@ class ListTileThree extends StatelessWidget {
           MaterialPageRoute(
             builder: (_) => ViewDetailPage(
               dataModel: dataModel,
-              isViewOnly: false,
+              isViewOnly: isViewOnly,
+              isDeleteable: isDeleteable,
             ),
           ),
         ),

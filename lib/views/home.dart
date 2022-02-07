@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_firebase_auth/services/auth_helper.dart';
 import 'package:test_firebase_auth/views/create_operation.dart';
+import 'package:test_firebase_auth/views/delete_opertaion.dart';
 import 'package:test_firebase_auth/views/read_opertaion.dart';
 import 'package:test_firebase_auth/views/update_opertaion.dart';
 
@@ -55,7 +56,11 @@ class HomeView extends StatelessWidget {
               child: const Text("Update"),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const DeleteView(),
+                ),
+              ),
               child: const Text("Delete"),
             ),
           ],
