@@ -16,6 +16,7 @@ class _ViewDetailsState extends State<ViewDetails> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        oneRow("id", widget.dataModel.id),
         oneRow("Name", widget.dataModel.name),
         oneRow("Company Name", widget.dataModel.companyName),
         oneRow("Designation", widget.dataModel.designation),

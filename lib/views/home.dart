@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_firebase_auth/services/auth_helper.dart';
 import 'package:test_firebase_auth/views/create_operation.dart';
 import 'package:test_firebase_auth/views/read_opertaion.dart';
+import 'package:test_firebase_auth/views/update_opertaion.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -46,7 +47,11 @@ class HomeView extends StatelessWidget {
               child: const Text("Read"),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const UpdateView(),
+                ),
+              ),
               child: const Text("Update"),
             ),
             ElevatedButton(

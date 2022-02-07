@@ -48,4 +48,12 @@ class FireBaseService {
         )
         .first;
   }
+
+  Future updateData(String newdata, String id) {
+    return data.doc(id).update({'message': newdata}).then((value) {
+      return "Data Updated Successfully Plz Revisted";
+    }).catchError((error) {
+      return "Failed to delete user's property: $error";
+    });
+  }
 }

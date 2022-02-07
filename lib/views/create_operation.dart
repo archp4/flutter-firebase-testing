@@ -21,12 +21,17 @@ class CreataDataView extends StatelessWidget {
         title: const Text("Create New Data"),
       ),
       body: Container(
-        decoration: const BoxDecoration(),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
         width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
         child: Form(
           key: _formkey,
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               const SizedBox(height: 20),
               TextFormField(

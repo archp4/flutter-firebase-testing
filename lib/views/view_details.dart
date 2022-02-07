@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_firebase_auth/models/data.dart';
+import 'package:test_firebase_auth/widgets/update_details.dart';
 import 'package:test_firebase_auth/widgets/view_details.dart';
 
 class ViewDetailPage extends StatefulWidget {
@@ -25,7 +26,7 @@ class _ViewDetailPageState extends State<ViewDetailPage> {
       backgroundColor: Colors.lightBlue[100],
       body: widget.isViewOnly
           ? Container(
-              height: 190,
+              height: 220,
               margin: const EdgeInsets.symmetric(
                 vertical: 20,
                 horizontal: 20,
@@ -40,7 +41,7 @@ class _ViewDetailPageState extends State<ViewDetailPage> {
               ),
               child: ViewDetails(dataModel: widget.dataModel),
             )
-          : Container(),
+          : UpdateDetails(dataModel: widget.dataModel),
     );
   }
 }

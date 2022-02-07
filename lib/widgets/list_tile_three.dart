@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:test_firebase_auth/models/data.dart';
 import 'package:test_firebase_auth/views/view_details.dart';
 
-class ListTileTwo extends StatefulWidget {
+class ListTileThree extends StatelessWidget {
   final DataModel2 dataModel;
-  const ListTileTwo({Key? key, required this.dataModel}) : super(key: key);
+  const ListTileThree({Key? key, required this.dataModel}) : super(key: key);
 
-  @override
-  State<ListTileTwo> createState() => _ListTileTwoState();
-}
-
-class _ListTileTwoState extends State<ListTileTwo> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,21 +19,21 @@ class _ListTileTwoState extends State<ListTileTwo> {
           context,
           MaterialPageRoute(
             builder: (_) => ViewDetailPage(
-              dataModel: widget.dataModel,
-              isViewOnly: true,
+              dataModel: dataModel,
+              isViewOnly: false,
             ),
           ),
         ),
         leading: CircleAvatar(
-          child: Text(widget.dataModel.name.substring(0, 1)),
+          child: Text(dataModel.name.substring(0, 1)),
         ),
-        title: Text(widget.dataModel.message),
+        title: Text(dataModel.message),
         subtitle: Text(
-          widget.dataModel.name +
+          dataModel.name +
               " - " +
-              widget.dataModel.companyName +
+              dataModel.companyName +
               ' as ' +
-              widget.dataModel.designation,
+              dataModel.designation,
         ),
       ),
     );
